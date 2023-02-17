@@ -1,0 +1,5 @@
+com/example/demo/DemoApplication.class
+com/example/demo/repository/HotelRoomRepository.class
+com/example/demo/config/DynamoDbConfiguration.class
+com/example/demo/entity/HotelRooms.class
+com/example/demo/controller/HotelController.class
