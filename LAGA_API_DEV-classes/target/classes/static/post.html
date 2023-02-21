@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>API Post Example</title>
+</head>
+<body>
+<h1>API Post Example</h1>
+<form onsubmit="submitForm(event)">
+    <label for="roomNumber">Room Number:</label>
+    <input type="text" id="roomNumber" name="roomNumber" required><br>
+
+    <label for="roomName">Room Name:</label>
+    <input type="text" id="roomName" name="roomName" required><br>
+
+    <label for="availability">Availability:</label>
+    <select id="availability" name="availability" required>
+        <option value="true">Available</option>
+        <option value="false">Not Available</option>
+    </select><br>
+
+    <button type="submit">Submit</button>
+</form>
+
+<script>
+      function submitForm(event) {
+        event.preventDefault();
+
+        const form = event.target;
+        const data = {
+          roomNumber: form.roomNumber.value,
+          roomName: form.roomName.value,
+          availability: form.availability.value === 'true',
+        };
+        const url = 'https://demo-giancarlo.herokuapp.com/room';
+        const options = {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        };
+        fetch(url, options)
+          .then(response => {
+              if (response.status === 200) {
+                  console.log(`Room posted successfully.`);
+              } else {
+                  console.error(`Failed to post room ${roomNumber}: ${response.status} ${response.statusText}`);
+              }
+          })
+          .catch(error => console.error(error));
+      }
+    </script>
+</body>
+</html>

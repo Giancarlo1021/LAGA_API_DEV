@@ -1,0 +1,5 @@
+/Users/giancarloavila/Desktop/demo/src/main/java/com/example/demo/DemoApplication.java
+/Users/giancarloavila/Desktop/demo/src/main/java/com/example/demo/repository/HotelRoomRepository.java
+/Users/giancarloavila/Desktop/demo/src/main/java/com/example/demo/config/DynamoDbConfiguration.java
+/Users/giancarloavila/Desktop/demo/src/main/java/com/example/demo/controller/HotelController.java
+/Users/giancarloavila/Desktop/demo/src/main/java/com/example/demo/entity/HotelRooms.java
