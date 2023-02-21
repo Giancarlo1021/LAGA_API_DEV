@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>API Delete Example</title>
+</head>
+<body>
+<h1>API Delete Example</h1>
+<form onsubmit="submitForm(event)">
+  <label for="roomNumber">Room Number:</label>
+  <input type="text" id="roomNumber" name="roomNumber" required><br>
+  <button type="submit">Submit</button>
+  <p>YOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO</p>
+</form>
+
+<script>
+      function submitForm(event) {
+        event.preventDefault();
+
+        const form = event.target;
+        const roomNumber = form.roomNumber.value;
+        const url = `https://demo-giancarlo.herokuapp.com/room/${roomNumber}`;
+        const options = {
+          method: 'DELETE',
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        };
+        fetch(url, options)
+          .then(response => {
+              if (response.status === 200) {
+                  console.log(`Room ${roomNumber} deleted successfully.`);
+              } else {
+                  console.error(`Failed to delete room ${roomNumber}: ${response.status} ${response.statusText}`);
+              }
+          })
+          .catch(error => console.error(error));
+      }
+    </script>
+</body>
+</html>

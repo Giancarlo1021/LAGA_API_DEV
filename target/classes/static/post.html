@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>API Form Example</title>
+    <title>API Post Example</title>
 </head>
 <body>
-<h1>API Form Example</h1>
+<h1>API Post Example</h1>
 <form onsubmit="submitForm(event)">
     <label for="roomNumber">Room Number:</label>
     <input type="text" id="roomNumber" name="roomNumber" required><br>
@@ -13,9 +13,9 @@
     <input type="text" id="roomName" name="roomName" required><br>
 
     <label for="availability">Availability:</label>
-    <select id="availability" name="availability">
-        <option value="true">True</option>
-        <option value="false">False</option>
+    <select id="availability" name="availability" required>
+        <option value="true">Available</option>
+        <option value="false">Not Available</option>
     </select><br>
 
     <button type="submit">Submit</button>
@@ -40,8 +40,13 @@
           body: JSON.stringify(data)
         };
         fetch(url, options)
-          .then(response => response.json())
-          .then(data => console.log(data))
+          .then(response => {
+              if (response.status === 200) {
+                  console.log(`Room posted successfully.`);
+              } else {
+                  console.error(`Failed to post room ${roomNumber}: ${response.status} ${response.statusText}`);
+              }
+          })
           .catch(error => console.error(error));
       }
     </script>
