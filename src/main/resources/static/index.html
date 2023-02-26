@@ -12,14 +12,7 @@
     
    
     <div class="container">
-      <div class="rooms-container">
-      <label>Pick a room</label>
-      <select id="room">
-        <option value="200">Suite</option>
-        <option value="150">Deluxe</option>
-        <option value="100">Basic</option>
-      </select>
-    </div>
+      
 
     <ul class="showcase">
       <li>
@@ -55,11 +48,37 @@
             <div>Fri</div>
             <div>Sat</div>
         </div> 
+
         <div class="days">
         </div>
+      
+
+ 
       </div>
 
-      
+      <form onsubmit="submitForm(event)" class="rooms-container">
+        <!-- date features can be put here-->
+        <!--
+        <label for="roomName">Room Name:</label> 
+        <input type="text" id="roomName" name="roomName" required><br> -->
+
+        <!-- integrate js on selected buttons on calendar gui to autofill textboxes -->
+        <label>Check in: </label>
+        <input type="text" id="roomNumber" name="roomNumber" required>
+        <br>
+        <label>Check out: </label>
+        <input type="text" id="roomNumber" name="roomNumber" required>
+        <br>
+
+        <label for="roomName">Pick a room</label>
+        <select id="roomName" name="roomName" required>
+          <option value="Suite">Suite</option>
+          <option value="Deluxe">Deluxe</option>
+          <option value="Basic">Basic</option>
+        </select> <br>
+
+        <button type="submit">Check Availability</button>
+      </form>
 
 
     </div>
