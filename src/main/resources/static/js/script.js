@@ -51,7 +51,7 @@ for(let i = 1; i <= lastDay; i++){
   if(i === new Date().getDate() && date.getMonth() === new Date().getMonth()){
     days+=`<div class="today">${i}</div>`;
   }else{
-  days+=`<div class="days">${i}</div>`;     // I added class="days"
+  days+=`<div class="day_s">${i}</div>`;     // I added class="day_s"
   }
 }
 monthDays.innerHTML = days;
@@ -71,23 +71,67 @@ container.addEventListener('click', e => {
   }
 });*/
 
+  var first_day = 0; // 0 is flag for empty, bc 0 date dne
+  var last_day = 0; 
 
 container.addEventListener("click", e => {
-  
-  //console.log(e.target);
-  //e.target.classList.toggle('selected');
-  
-  if(e.target.classList.contains('days')){  // IT WORKSSS
-        //console.log(e.target);
-       e.target.classList.toggle('selected');
+
+  /*
+  if(e.target.classList.contains('day_s') && !e.target.classList.contains('selected')){
+      e.target.classList.toggle('selected');
     }
-    //e.target.classList.toggle('selected');
+  else if(e.target.classList.contains('day_s') && e.target.classList.contains('selected')){
+    //console.log(e.target.innerText);
+    e.target.classList.toggle('selected');
+    
+  }*/
+  if(e.target.classList.contains('day_s') && !e.target.classList.contains('selected')){
+      if(first_day == 0 && last_day == 0){
+        e.target.classList.toggle('selected');
+        first_day = parseInt(e.target.innerHTML);
+        console.log("first day = " + first_day);
+      }
+      else{
+        if(first_day != 0 && last_day == 0){
+          e.target.classList.toggle('selected');
+          last_day = parseInt(e.target.innerHTML);
+          console.log("last day = " + last_day);
+          
+          if(first_day > last_day){
+            let ecup;
+            ecup = first_day;
+            first_day = last_day;
+            last_day = ecup;
+            console.log("new -> first day = " + first_day + ", last day = " + last_day);
+          }
+        }
+        
+      }
 
-    // 1st click, then 2nd click: if selected day > than the 1st click, select all inbetween
-    /*
-  if(e.target.classList.contains('days')){
+      
+    }
+  else if(e.target.classList.contains('day_s') && e.target.classList.contains('selected')){
+    e.target.classList.toggle('selected');
+  }
 
-  }*/ 
+  if(first_day != 0 && last_day != 0){
+          console.log("we're here now\n");
+
+          const sel = document.querySelectorAll('.day_s');
+          //console.log(sel);
+          //sel.forEach(element => element.classList.add('selected'));
+
+
+          
+          sel.forEach(element => {
+            if(element.innerHTML > first_day && element.innerHTML < last_day){
+              element.classList.add('selected');
+              console.log(element.innerHTML);
+            }
+          });
+  }
+
+      
 });
 
 document.querySelector(".prev").addEventListener("click", () => {
@@ -101,3 +145,32 @@ document.querySelector(".next").addEventListener("click", () => {
 });
 
 renderCalendar();
+
+
+function submitBook(event) {
+  event.preventDefault();
+
+        const form = event.target;
+        const data = {
+          roomNumber: form.roomNumber.value,
+          roomName: form.roomName.value,
+          availability: form.availability.value === 'true',
+        };
+        const url = 'https://demo-giancarlo.herokuapp.com/room';
+        const options = {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        };
+        fetch(url, options)
+          .then(response => {
+              if (response.status === 200) {
+                  console.log(`Room posted successfully.`);
+              } else {
+                  console.error(`Failed to post room ${roomNumber}: ${response.status} ${response.statusText}`);
+              }
+          })
+          .catch(error => console.error(error));
+}
