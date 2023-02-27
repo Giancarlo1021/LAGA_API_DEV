@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatable" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale = 1.0">
+    <title>Hotel</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+
+    <!--font awesome cdn  link--->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+
+    <!--costom css file-->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+<!--header section start-->
+
+<section class ="header">
+    <div class="flex">
+        <a href="#home" class="logo">Hotels</a>
+        <a href="#availability" class="btn">check availability</a>
+        <div id="menu-btn" class ="fas fa-bars"></div>
+    </div>
+    <nav class="navbar">
+        <a href="#home">home</a>
+        <a href="#about">about</a>
+        <a href="#reservation">reservation</a>
+        <a href="#galery">galery</a>
+        <a href="#contact">contact</a>
+        <a href="#review">review</a>
+    </nav>
+</section>
+
+<!--header section end-->
+
+<!---home section starts-->
+<section class="home"  id = "home">
+    <div class="swiper home-slider">
+        <div class="swiper-wrapper">
+            <div class="box swiper-slider">
+                <img src="images/kingS.webp" alt="">
+                <div class="flex">
+                    <h3>Luxorious rooms</h3>
+                    <a href="#availability" class="btn">check availability</a>
+                </div>
+            </div>
+
+            <div class="box swiper-slider">
+                <img src="images/restautant.jpg" alt="">
+                <div class="flex">
+                    <h3>food and drinks</h3>
+                <a href="#reservation " class="btn">make reservation</a>
+                </div>
+            </div>
+
+            <div class="box swiper-slider">
+                <img src="images/lobby.jpg" alt="">
+                <div class="flex">
+                    <h3>Luxorious hall</h3>
+                    <a href="#contact" class="btn">contact us</a></div>
+            </div>
+
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+
+    </div>
+</section>
+
+<!---home section end-->
+
+
+<!--availability section start-->
+<section class="availability"  id="availability">
+
+    <form action="" method="post">
+        <div class="flex"> 
+            <div class="box">
+                <p>check in <span>*</span></p>
+                <input type = "date" name="check_in" class="box" required>
+            </div>
+            <div class="box">
+                <p>check out <span>*</span></p>
+                <input type = "date" name="check_out" class="box" required>
+            </div>
+            <div class="box">
+                <p>adults<span>*</span></p>
+                <select name="adults" class="input" required>
+                    <option value="1">1 adult</option>
+                    <option value="2">2 adults</option>
+                    <option value="3">3 adults</option>
+                    <option value="4">4 adults</option>
+                    <option value="5">5 adults</option>
+                    <option value="6">6 adults</option>
+                </select>
+            </div>
+            <div class="box">
+                <p>child<span>*</span></p>
+                <select name="childrens" class="input" required>
+                    <option value="0">no child</option>
+                    <option value="1">1 child</option>
+                    <option value="2">2 children</option>
+                    <option value="3">3 children</option>
+                    <option value="4">4 children</option>
+                    <option value="5">5 children</option>
+                    <option value="6">6 children</option>
+                </select>
+            </div>
+            <div class="box">
+                <p>rooms<span>*</span></p>
+                <select name="rooms" class="input" required>
+             
+                    <option value="1">1 room</option>
+                    <option value="2">2 rooms</option>
+                    <option value="3">3 rooms</option>
+                </select>
+            </div>
+        </div>
+        <input type="submit" value="check availability" name = "check" class="btn">
+      
+    </form>
+
+</section>
+<!--availability section end-->
+
+<!--about section start-->
+<section class="about" id="about">
+
+<div class="row">
+    
+    <div class="image"> 
+         <img src="images/AdobeStock_271082810_Preview.jpeg">
+    </div>
+    <div class="content">
+        <h3>best staff </h3>
+        <p>
+            fdghsjkfvgcbdnhxsmkz
+        </p>
+        <a href="#reservation" class="btn">make a reservation</a>
+    </div>
+</div>
+
+<div class="row revers">
+    
+    <div class="image"> 
+         <img src="images/AdobeStock_52384177_Preview.jpeg">
+    </div>
+    <div class="content">
+        <h3>best food </h3>
+        <p>
+            fdghsjkfvgcbdnhxsmkz
+        </p>
+        <a href="#contact" class="btn">contact us</a>
+    </div>
+</div>
+<div class="row">
+    
+    <div class="image"> 
+         <img src="images/AdobeStock_271082810_Preview.jpeg">
+    </div>
+    <div class="content">
+        <h3>best dfghjkl</h3>
+        <p>
+            fdghsjkfvgcbdnhxsmkz
+        </p>
+        <a href="#availability" class="btn">check availability</a>
+    </div>
+</div>
+
+</section>
+
+<!--about section start-->
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+<!----costom java---->
+<link href="script.js">
+</body>
+
+
+</html>
