@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Guest Details</title>
+     <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+  </head>
+  <body>
+
+    <h1> <a href="index.html">Edit Reservation </a></h1>
+   
+    <div class="container">
+      <h1>Available!</h1>
+
+      <p>Check in: <span id="check-in"></span> </p>
+      <p>Check out: <span id="check-out"></span> </p>
+      <p>Days: <span id="comp-days"></span> </p>
+      <!-- <p>Room: <span id="room-what"></span> </p> -->
+      <p>Room Price: $<span id="room-price"></span> </p>
+      <p>Number of Rooms: <span id="num-room"></span> </p>
+      <p>Adults: <span id="num-adult"></span> </p>
+      <p>Children: <span id="num-child"></span> </p>
+      <br>
+      <p>Total price for stay: <span id="total-price"></span></p>
+
+      <h1>Guest Details</h1>
+    <form id="fin_form">
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname"><br>
+
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname"><br>
+
+        <label for="g_email">Email:</label><br>
+        <input type="text" id="g_email" name="g_email"><br>
+
+        <label for="g_phone">Phone:</label><br>
+        <input type="text" id="g_phone" name="g_phone"><br>
+
+      <h1>Billing Details</h1>
+
+        <label for="g_address">Address:</label><br>
+        <input type="text" id="g_address" name="g_address"><br>
+
+        <label for="g_city">City:</label><br>
+        <input type="text" id="g_city" name="g_city"><br>
+
+        <label for="g_state">State:</label><br>
+        <select id="g_state" name="g_state">
+          <option value="None">N/A</option>
+          <option value="AL">Alabama</option>
+          <option value="AK">Alaska</option>
+          <option value="AZ">Arizona</option>
+          <option value="AR">Arkansas</option>
+          <option value="CA">California</option>
+          <option value="CO">Colorado</option>
+          <option value="CT">Connecticut</option>
+          <option value="DE">Delaware</option>
+          <option value="DC">District Of Columbia</option>
+          <option value="FL">Florida</option>
+          <option value="GA">Georgia</option>
+          <option value="HI">Hawaii</option>
+          <option value="ID">Idaho</option>
+          <option value="IL">Illinois</option>
+          <option value="IN">Indiana</option>
+          <option value="IA">Iowa</option>
+          <option value="KS">Kansas</option>
+          <option value="KY">Kentucky</option>
+          <option value="LA">Louisiana</option>
+          <option value="ME">Maine</option>
+          <option value="MD">Maryland</option>
+          <option value="MA">Massachusetts</option>
+          <option value="MI">Michigan</option>
+          <option value="MN">Minnesota</option>
+          <option value="MS">Mississippi</option>
+          <option value="MO">Missouri</option>
+          <option value="MT">Montana</option>
+          <option value="NE">Nebraska</option>
+          <option value="NV">Nevada</option>
+          <option value="NH">New Hampshire</option>
+          <option value="NJ">New Jersey</option>
+          <option value="NM">New Mexico</option>
+          <option value="NY">New York</option>
+          <option value="NC">North Carolina</option>
+          <option value="ND">North Dakota</option>
+          <option value="OH">Ohio</option>
+          <option value="OK">Oklahoma</option>
+          <option value="OR">Oregon</option>
+          <option value="PA">Pennsylvania</option>
+          <option value="RI">Rhode Island</option>
+          <option value="SC">South Carolina</option>
+          <option value="SD">South Dakota</option>
+          <option value="TN">Tennessee</option>
+          <option value="TX">Texas</option>
+          <option value="UT">Utah</option>
+          <option value="VT">Vermont</option>
+          <option value="VA">Virginia</option>
+          <option value="WA">Washington</option>
+          <option value="WV">West Virginia</option>
+          <option value="WI">Wisconsin</option>
+          <option value="WY">Wyoming</option>
+        </select>
+        <br>
+
+        <label for="g_zip">ZIP Code:</label><br>
+        <input type="text" id="g_zip" name="g_zip"><br> 
+
+        <button type="submit">Confirm Reservation</button>
+    </form>
+    </div>
+
+
+
+
+    <script>
+      // its untenable to segragate js on each page, find way to put everything into a single js script
+      const check_in_got = localStorage.getItem('check_in');
+      const check_out_got = localStorage.getItem('check_out');
+      //const room_what_got = localStorage.getItem('room_what');
+      const room_price_got = localStorage.getItem('room_price');
+      const numRooms_got = localStorage.getItem('numRooms');
+      const numAdults_got = localStorage.getItem('numAdults');
+      const numChild_got = localStorage.getItem('numChild');
+
+      const check_in_element = document.querySelector('#check-in');
+      check_in_element.textContent = check_in_got;
+      const check_out_element = document.querySelector('#check-out');
+      check_out_element.textContent = check_out_got;
+      //const room_what_element = document.querySelector('#room-what');
+      //room_what_element.textContent = room_what_got;
+      const room_price_element = document.querySelector('#room-price');
+      room_price_element.textContent = room_price_got;
+      const numRooms_element = document.querySelector('#num-room');
+      numRooms_element.textContent = numRooms_got;
+      const num_adult_element = document.querySelector('#num-adult');
+      num_adult_element.textContent = numAdults_got;
+      const num_child_element = document.querySelector('#num-child');
+      num_child_element.textContent = numChild_got;
+
+      console.log(check_in_got);
+      // this whole thing should probably be a function
+      const check_in_Parts = check_in_got.split('-');
+      const check_in_day = parseInt(check_in_Parts[2]);
+      const check_out_Parts = check_out_got.split('-');
+      const check_out_day = parseInt(check_out_Parts[2]);
+      const comp_days = document.querySelector('#comp-days');
+      comp_days.textContent = check_out_day - check_in_day;
+
+      const g_total = (check_out_day - check_in_day) * room_price_got * numRooms_got;
+
+      const comp_price = document.querySelector('#total-price');
+      comp_price.textContent = "$" + g_total;
+      console.log("Total = " + g_total);
+
+      // final form
+      /*
+      localStorage.setItem('check_in', check_in);
+      localStorage.setItem('check_out', check_out);
+  //localStorage.setItem('room_what', room_what);
+      localStorage.setItem('room_price', room_price);
+      localStorage.setItem('numRooms', numRooms);
+      localStorage.setItem('numAdults', numAdults);
+      localStorage.setItem('numChild', numChild); */
+
+      const finForm = document.querySelector('#fin_form');
+
+      finForm.addEventListener('submit', e => {
+        e.preventDefault();
+      let first_name = document.querySelector('#fname').value;
+      let last_name = document.querySelector('#lname').value;
+      let guest_email = document.querySelector('#g_email').value;
+      let guest_phone = document.querySelector('#g_phone').value;
+      let guest_address = document.querySelector('#g_address').value;
+      let guest_city = document.querySelector('#g_city').value;
+      let guest_state = document.querySelector('#g_state').value;
+      let guest_zip = document.querySelector('#g_zip').value;
+
+      console.log(first_name);
+      console.log(last_name);
+      console.log(guest_email);
+      console.log(guest_phone);
+      console.log(guest_address);
+      console.log(guest_city);
+      console.log(guest_state);
+      console.log(guest_zip);
+
+      localStorage.setItem('first_name', first_name);
+      localStorage.setItem('last_name', last_name);
+      localStorage.setItem('guest_email', guest_email);
+      localStorage.setItem('guest_phone', guest_phone);
+      localStorage.setItem('guest_address', guest_address);
+      localStorage.setItem('guest_city', guest_city);
+      localStorage.setItem('guest_state', guest_state);
+      localStorage.setItem('guest_zip', guest_zip);
+
+      window.location.href = "confirmation.html";
+
+      });
+
+    </script>
+  </body>
+</html>

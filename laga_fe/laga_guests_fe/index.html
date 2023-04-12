@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Your Reservation</title>
+     <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+  </head>
+  <body>
+
+    
+   
+    <div class="container">
+    <h1>Your Reservation</h1>
+      <form class="rooms-container" id="initForm">
+        
+        <label>Check in: </label>
+        <input type="date" id="check_in" required>
+        <br>
+        <label>Check out: </label>
+        <input type="date" id="check_out" required>
+        <br>
+
+        <label for="roomName">Pick a room</label>
+        <select id="roomName" name="roomName" required>
+          <option value="120">Suite</option>
+          <option value="100">Deluxe</option>
+          <option value="81">Basic</option>
+        </select> 
+
+        <label for="rooms">Rooms</label>
+        <select id="rooms" name="numRooms" required>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select> <br>
+
+        <label for="adults">Adults</label>
+        <select id="adults" name="numAdults" required>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+        </select> 
+
+        <label for="children">Children</label>
+        <select id="children" name="numChildren" required>
+          <option value="0">0</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select> <br>
+
+      
+
+
+        <button type="submit">Check Availability</button>
+      </form>
+
+    <ul class="showcase">
+      <li>
+        <div class="day"></div>
+        <small>Ready</small>
+      </li>
+      <li>
+        <div class="day selected"></div>
+        <small>Selected</small>
+      </li>
+      <li>
+        <div class="day occupied"></div>
+        <small>Occupied</small>
+      </li>
+    </ul>
+
+      <div class="calendar">
+        <div class="month">
+    
+          <i class="fas fa-angle-left prev"></i>
+          <div class="date">
+            <h1></h1>
+            <p></p>
+          </div>
+          <i class="fas fa-angle-right next"></i>
+        </div>
+        <div class="weekdays">
+            <div>Sun</div>
+            <div>Mon</div>
+            <div>Tue</div>
+            <div>Wed</div>
+            <div>Thu</div>
+            <div>Fri</div>
+            <div>Sat</div>
+        </div> 
+
+        <div class="days">
+        </div>
+      
+
+ 
+      </div>
+
+      
+
+
+    </div>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>

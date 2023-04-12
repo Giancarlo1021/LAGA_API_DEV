@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Guest Details</title>
+     <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+  </head>
+  <body>
+
+
+   
+    <div class="container">
+      <h1>Your Reservation is Confirmed!</h1>
+
+      <h2>Guest Details</h2>
+      <p>Guest: <span id="first_name"> </span> <span id="last_name"></span></p>
+      <p>Email: <span id="guest_email"></span></p>
+      <p>Phone: <span id="guest_phone"></span></p>
+
+      <h2>Billing Information</h2>
+      <p>Address: <span id="guest_address"></span></p>
+      <p>City: <span id="guest_city"></span></p>
+      <p>State: <span id="guest_state"></span></p>
+      <p>Zip: <span id="guest_zip"></span></p>
+      <p>Total price paid: <span id="total-price"></span></p>
+
+      <h2>Stay Information</h2>
+      <p>Check in: <span id="check-in"></span> </p>
+      <p>Check out: <span id="check-out"></span> </p>
+      <p>Days: <span id="comp-days"></span> </p>
+      <p>Room: <span id="room-what"></span> </p>
+      <p>Number of Rooms: <span id="num-room"></span> </p>
+      <p>Adults: <span id="num-adult"></span> </p>
+      <p>Children: <span id="num-child"></span> </p>
+
+    </div>
+
+
+
+
+    <script>
+        
+        
+      // its untenable to segragate js on each page, find way to put everything into a single js script
+
+        /*
+      const check_in_got = localStorage.getItem('check_in');
+      const check_out_got = localStorage.getItem('check_out');
+      //const room_what_got = localStorage.getItem('room_what');
+      const room_price_got = localStorage.getItem('room_price');
+      const numRooms_got = localStorage.getItem('numRooms');
+      const numAdults_got = localStorage.getItem('numAdults');
+      const numChild_got = localStorage.getItem('numChild');
+
+      const check_in_element = document.querySelector('#check-in');
+      check_in_element.textContent = check_in_got;
+      const check_out_element = document.querySelector('#check-out');
+      check_out_element.textContent = check_out_got;
+      const room_what_element = document.querySelector('#room-what');
+      room_what_element.textContent = room_what_got;
+      //const room_price_element = document.querySelector('#room-price');
+      //room_price_element.textContent = room_price_got;
+      const numRooms_element = document.querySelector('#num-room');
+      numRooms_element.textContent = numRooms_got;
+      const num_adult_element = document.querySelector('#num-adult');
+      num_adult_element.textContent = numAdults_got;
+      const num_child_element = document.querySelector('#num-child');
+      num_child_element.textContent = numChild_got;*/
+
+      /*
+      console.log(check_in_got);
+      // this whole thing should probably be a function
+      const check_in_Parts = check_in_got.split('-');
+      const check_in_day = parseInt(check_in_Parts[2]);
+      const check_out_Parts = check_out_got.split('-');
+      const check_out_day = parseInt(check_out_Parts[2]);
+      const comp_days = document.querySelector('#comp-days');
+      comp_days.textContent = check_out_day - check_in_day;
+
+      const g_total = (check_out_day - check_in_day) * room_price_got * numRooms_got;
+
+      const comp_price = document.querySelector('#total-price');
+      comp_price.textContent = "$" + g_total;
+      console.log("Total = " + g_total);*/
+
+      const first_name_got = localStorage.getItem('first_name');
+      const last_name_got = localStorage.getItem('last_name');
+      const guest_email_got = localStorage.getItem('guest_email');
+      const guest_phone_got = localStorage.getItem('guest_phone');
+      const guest_state_got = localStorage.getItem('guest_state');
+      const guest_address_got = localStorage.getItem('guest_address');
+      const guest_city_got = localStorage.getItem('guest_city');
+      const guest_zip_got = localStorage.getItem('guest_zip');
+
+      const first_name_element = document.querySelector('#first_name');
+      first_name_element.textContent = first_name_got;
+      const last_name_element = document.querySelector('#last_name');
+      last_name_element.textContent = last_name_got;
+      const guest_email_element = document.querySelector('#guest_email');
+      guest_email_element.textContent = guest_email_got;
+      const guest_phone_element = document.querySelector('#guest_phone');
+      guest_phone_element.textContent = guest_phone_got;
+      const guest_address_element = document.querySelector('#guest_address');
+      guest_address_element.textContent = guest_address_got;
+      const guest_state_element = document.querySelector('#guest_state');
+      guest_state_element.textContent = guest_state_got;
+      const guest_city_element = document.querySelector('#guest_city');
+      guest_city_element.textContent = guest_city_got;
+      const guest_zip_element = document.querySelector('#guest_zip');
+      guest_zip_element.textContent = guest_zip_got;
+
+    </script>
+  </body>
+</html>
