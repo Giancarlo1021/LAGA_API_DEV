@@ -10,10 +10,12 @@ public class JDBCPostgreSQLConnect {
 	// jdbc url - Location of database in memory.
 	// jdbc user - User who owns database.
 	// jdbc password - Password of user who owns database.
-	private static final String url = "jdbc:postgresql://localhost/<--->"; // Replace "<--->" with user who owns database.
-	private static final String user = "";
-	private static final String password = "";
-	
+
+	// Added environment variables to DB
+	// edited code here so it can use those variabels to connect to DB
+	private static final String url = System.getenv("DATABASE_URL");
+	private static final String user = System.getenv("DATABASE_USER");
+	private static final String password = System.getenv("DATABASE_PASSWORD");
 	private static Connection connection = null;
 	
 	public static Connection connect() {
