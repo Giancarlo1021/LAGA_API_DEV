@@ -10,6 +10,13 @@ body{
     margin: 0px auto;
 }
 
+table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  border: 3px solid #4E4F50;
+}
+
 .row{
     display: flex;
     flex-wrap: wrap;
