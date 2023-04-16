@@ -1,6 +1,8 @@
 package Entities;
 
+
 public class User {
+
 	private String firstName;
 	
 	private String lastName;
@@ -16,6 +18,13 @@ public class User {
 		return firstName;
 	}
 
+	/*
+	 * <p> this is a sample java doc aaaaaa <p>
+	 * 
+	 * @param firstName its a firstName
+	 * 
+	 */
+	
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}

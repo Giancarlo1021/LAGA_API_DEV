@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry excluding="Test/" kind="src" path="src"/>
+	<classpathentry kind="src" path="src/Test"/>
+	<classpathentry kind="lib" path="postgresql-42.6.0.jar"/>
+	<classpathentry kind="lib" path="sqlite-jdbc-3.40.1.0.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

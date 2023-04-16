@@ -42,5 +42,15 @@
         <td>Address</td>
       </tr>
     </table>
+
+    <script>
+      const CUSTOMERS_URL = 'https://demo-giancarlo.herokuapp.com/api/customers/';
+
+      
+      fetch(CUSTOMERS_URL)
+        .then(response => response.json())
+        .then(data => console.log(data))
+        .catch(error => console.error(error));
+    </script>
   </body>
 </html>

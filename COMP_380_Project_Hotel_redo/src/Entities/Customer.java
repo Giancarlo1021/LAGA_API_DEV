@@ -2,6 +2,7 @@ package Entities;
 
 import java.util.ArrayList;
 
+
 public class Customer extends User {
 	public Customer() {
 		
@@ -24,9 +25,16 @@ public class Customer extends User {
 
 	public int getCreditCardNumber() {
 		return creditCardNumber;
-	}
 
+	}
+	
+	/*
+	 * <p>this is a sample javadoc<p>
+	 * 
+	 * @param creditCardNumber its a credit card number
+	 */
 	public void setCreditCardNumber(int creditCardNumber) {
 		this.creditCardNumber = creditCardNumber;
+		
 	}
 }
